@@ -23,6 +23,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    padding-bottom: 25px;
 }
 
 .logo {
@@ -60,7 +61,9 @@ body {
 }
 
 .section{
-    overflow: scroll;
+    overflow: auto;
+    margin-top: 50px;
+    
 }
 .home {
     height: 100vh;
@@ -74,6 +77,8 @@ body {
 
 .home-content {
     max-width: 600px;
+    
+
 }
 
 .home-content h1 {
@@ -81,6 +86,8 @@ body {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
+    padding-top: 20px;
+    
 }
 
 .home-content h1::before {
@@ -271,6 +278,31 @@ body {
 .home-imgHover:hover {
     background: #081b29;
     opacity: .8;
+}
+@media (max-width: 768px) {
+    .home {
+        justify-content: center;
+    }
+    .home-content h1 {
+        top: 50px; /* Reduce font size for h1 on small screens */
+        font-size: 32px;
+    }
+    .home-content h3 {
+        top: 50px; /* Reduce font size for h1 on small screens */
+        font-size: 20px;
+    }
+    .home-content p {
+        top: 50px; /* Reduce font size for h1 on small screens */
+        font-size: 12px;
+    }
+    .home-content .btn-box {
+        top: 50px; /* Reduce font size for h1 on small screens */
+        margin: 0;
+        
+    }
+    .home-content .home-sci {
+        top: 80px; /* Reduce font size for h1 on small screens */
+    }
 }
 
 /*KEYFRAMES ANIMATION*/
