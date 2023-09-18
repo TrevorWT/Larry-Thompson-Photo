@@ -7,6 +7,25 @@
     font-family: 'Poppins', sans-serif;
 }
 
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        /* Stack the header items vertically */
+        align-items: center;
+        /* Center align items */
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        /* Add some space below the logo */
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+        /* Reduce font size for h1 on small screens */
+        top: 50px;
+    }
+}
 body {
     /*background: #081b29;*/
     color: #ededed;
