@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">LTP</a>
+
+        <nav class="navbar">
+            <a href="./index.html" class="active">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./gallery.html">Gallery</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi, I'm Larry Thompson</h1>
+            <h3>Freelance Photographer</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.</p>
+            <div class="btn-box">
+                <a href="#">Hire Me</a>
+                <a href="#">Let's Talk</a>
+            </div>
+            <div class="home-sci">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+        <div class=spacer>
+            
+        </div>
+        <div class="preview">
+            <img class="img-slide active" src="https://twcreation.com/images/16x9nature8.jpg">
+            <img class="img-slide" src="https://twcreation.com/images/16x9flower1.jpg">
+            <img class="img-slide" src="https://twcreation.com/images/16x9car2.jpg">
+            <img class="img-slide" src="https://twcreation.com/images/16x9port2.jpg">
+            <img class="img-slide" src="https://twcreation.com/images/16x9nature12.jpg">
+            
+            
+
+            <div class="img-nav">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+
+        </div>
+
+        <span class="home-imgHover"></span>
+
+    </section>
+    <script>
+        // Function to load a webpage in the background
+        function loadWebpageInBackground(url) {
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        // Webpage content has been fetched successfully.
+                        // You can process the content here if needed.
+                        console.log('Webpage content loaded in the background.');
+                    } else {
+                        console.error('Failed to load webpage:', response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Usage example
+        const webpageUrl = './gallery.html'; // Replace with the URL of the webpage you want to load
+        loadWebpageInBackground(webpageUrl);
+    </script>
+    <script>
+        // Function to preload images
+        function preloadImages(imageUrls) {
+            for (const imageUrl of imageUrls) {
+                const img = new Image();
+                img.src = imageUrl;
+            }
+        }
+
+        // List of image URLs to preload
+        const imageUrlsToPreload = [
+            'https://twcreation.com/images/nature1.jpg',
+            'https://twcreation.com/images/nature2.jpg',
+            'https://twcreation.com/images/nature3.jpg',
+            'https://twcreation.com/images/nature4.jpg',
+            'https://twcreation.com/images/nature5.jpg',
+            'https://twcreation.com/images/nature6.jpg',
+            'https://twcreation.com/images/nature7.jpg',
+            'https://twcreation.com/images/nature8.jpg',
+            'https://twcreation.com/images/nature9.jpg',
+            'https://twcreation.com/images/nature10.jpg',
+            'https://twcreation.com/images/nature11.jpg',
+            'https://twcreation.com/images/nature12.jpg',
+            'https://twcreation.com/images/nature13.jpg',
+            'https://twcreation.com/images/nature14.jpg',
+            'https://twcreation.com/images/nature15.jpg',
+            'https://twcreation.com/images/nature16.jpg',
+            'https://twcreation.com/images/nature17.JPG',
+            'https://twcreation.com/images/nature18.jpg',
+
+            // Add more image URLs as needed
+        ];
+
+        // Call the function to preload images
+        preloadImages(imageUrlsToPreload);
+    </script>
+    <script type="text/javascript">
+
+        
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".img-slide")
+
+        var sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active")
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active")
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            })
+        })
+    </script>
+</body>
+
+</html>
